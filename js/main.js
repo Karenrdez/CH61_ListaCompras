@@ -81,6 +81,32 @@ btnAgregar.addEventListener("click", function (event) {
 
 window.addEventListener("load", function (event){
     event.preventDefault();
+
+if(this.localStorage.getItem("datos")!=null){
+    datos=JSON.parse(this.localStorage.getItem("datos"));
+    datos.forEach((e)=>{
+        let row= `<tr>
+            <td>${e.cont}</td>
+            <td>${e.nombre}</td>
+            <td>${e.cantidad}</td>
+            <td>${e.precio}</td>
+            </tr>`;
+    })
+}//datos !=null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if(this.localStorage.getItem("resumen") !=null){
         let resumen = JSON.parse (this.localStorage.getItem("resumen"));
         cont.resumen.cont;
@@ -93,3 +119,4 @@ window.addEventListener("load", function (event){
         {style: "currency", currency: "MXN"}
     )
 })
+
